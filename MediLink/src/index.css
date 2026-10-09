@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* MediLink Light Theme Design Tokens */
+  --medilink-navy: #132335;
+  --medilink-navy-soft: #3E4C5E;
+  --medilink-blue: #1D6FA5;
+  --medilink-blue-dark: #155882;
+  --medilink-blue-tint: #EAF3FB;
+  --medilink-blue-tint2: #F5F9FD;
+  --medilink-green: #1E9E6B;
+  --medilink-green-tint: #E7F7F0;
+  --medilink-amber: #C2760B;
+  --medilink-amber-tint: #FBF1DF;
+  --medilink-red: #C13B3B;
+  --medilink-red-tint: #FBEAEA;
+  --medilink-border: #E4EAF0;
+  --medilink-border-soft: #EDF1F5;
+  --medilink-bg: #F6F9FC;
+  --medilink-card: #FFFFFF;
+  --medilink-input-bg: #FFFFFF;
+  --medilink-muted: #64748B;
+  --medilink-text-primary: #132335;
+  --medilink-text-secondary: #3E4C5E;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  /* MediLink Dark Theme Design Tokens - High Readability & Contrast */
+  --medilink-navy: #F8FAFC;
+  --medilink-navy-soft: #CBD5E1;
+  --medilink-blue: #38BDF8;
+  --medilink-blue-dark: #0EA5E9;
+  --medilink-blue-tint: rgba(56, 189, 248, 0.14);
+  --medilink-blue-tint2: rgba(30, 41, 59, 0.75);
+  --medilink-green: #34D399;
+  --medilink-green-tint: rgba(52, 211, 153, 0.16);
+  --medilink-amber: #FBBF24;
+  --medilink-amber-tint: rgba(251, 191, 36, 0.16);
+  --medilink-red: #F87171;
+  --medilink-red-tint: rgba(248, 113, 113, 0.16);
+  --medilink-border: #2D3E60;
+  --medilink-border-soft: #1E2D4A;
+  --medilink-bg: #0B132B;
+  --medilink-card: #17223B;
+  --medilink-input-bg: #121C33;
+  --medilink-muted: #94A3B8;
+  --medilink-text-primary: #F8FAFC;
+  --medilink-text-secondary: #CBD5E1;
+}
+
+html.high-contrast.dark {
+  --medilink-navy: #FFFFFF;
+  --medilink-navy-soft: #E2E8F0;
+  --medilink-border: #475569;
+  --medilink-border-soft: #334155;
+  --medilink-bg: #030712;
+  --medilink-card: #0F172A;
+  --medilink-input-bg: #0B0F19;
+}
+
+* {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--medilink-bg);
+  color: var(--medilink-text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ========================================================
+   Dark Mode Surface & Typography Optimization ("Perfection in Letters")
+   ======================================================== */
+
+html.dark body {
+  background-color: #0b132b;
+  color: #f8fafc;
+}
+
+/* Adapt standard container backgrounds */
+html.dark .bg-white {
+  background-color: #17223b !important;
+}
+
+/* Header & sidebar backgrounds */
+html.dark header.bg-white,
+html.dark aside.bg-white {
+  background-color: #131c33 !important;
+}
+
+/* Slate text contrast fixes for pristine readability */
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-gray-900,
+html.dark .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-slate-600,
+html.dark .text-gray-700,
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400,
+html.dark .text-gray-500,
+html.dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Form controls in dark mode */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #121c33 !important;
+  color: #f8fafc !important;
+  border-color: #2d3e60 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.dark select option {
+  background-color: #17223b !important;
+  color: #f8fafc !important;
+}
+
+/* Table rows and hover in dark mode */
+html.dark table tbody tr:hover {
+  background-color: #1e2c4a !important;
+}
+
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover {
+  background-color: #213052 !important;
+}
+
+/* Badges and tags */
+html.dark .bg-slate-100 {
+  background-color: #243354 !important;
+  color: #cbd5e1 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Google Translate Full-Site Translation Clean Integration */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+font {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
